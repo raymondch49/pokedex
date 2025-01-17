@@ -128,7 +128,7 @@ export default function PokeCard(props){
         <Modal handleCloseModal = {() => { setSkill(null)}}>
         <div>
           <h6>Name</h6>
-          <h2>{skill.name.replaceAll('-', ' ')}</h2>     
+          <h2 className="skill-name">{skill.name.replaceAll('-', ' ')}</h2>     
           <div>
             <h6>Description</h6>
             <p> {skill.description} </p>
@@ -178,7 +178,7 @@ export default function PokeCard(props){
       <div className='pokemon-move-grid'>
         {moves.map((moveObj, moveIndex) => {
           return (
-            <button className='button-card pokemon-move' key={moveIndex} onClick={(moveIndex) => {
+            <button className='button-card pokemon-move' key={moveIndex} onClick={() => {
               fetchMoveData(moveObj?.move?.name, moveObj?.move?.url)
             }}>
               <p>{moveObj?.move?.name.replaceAll('-', ' ')}</p>
